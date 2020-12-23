@@ -86,7 +86,7 @@ const Navbar = () => {
                     onChange={e => fetchUsers(e.target.value)}
                     />
                     <ul className="collection">
-                        {
+                        {   
                             userList.map(item => {
                                 return <Link key={Math.random()} to={state?item._id !== state._id?`/profile/${item._id}`:`/profile`:''} 
                                 onClick={() => {
