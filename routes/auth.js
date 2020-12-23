@@ -10,10 +10,6 @@ const sgMail = require('@sendgrid/mail')
 
 sgMail.setApiKey(SENDGRID_API)
 
-router.get('/', (req, res) => {
-    res.json({msg: 'hello'})
-})
-
 router.post('/signup', (req, res) => {
     const {name, email, password, pic} = req.body;
 
