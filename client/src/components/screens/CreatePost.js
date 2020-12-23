@@ -38,6 +38,8 @@ const CreatePost = () => {
     }, [url])
 
     const postDetails = () => {
+        if(!image || !title || !caption)
+            return M.toast({html: "Field Empty", classes:"#e53935 red darken-1"})
         const data = new FormData()
 
         data.append('file', image)

@@ -7,6 +7,7 @@ const Profile = () => {
     const [pics, setPics] = useState([])
     const [image, setImage] = useState()
     const picModal = useRef(null)
+    const inpT = useRef(null)
 
     useEffect(() => {
         fetch('/mypost', {
@@ -35,6 +36,8 @@ const Profile = () => {
         .then(data => {
             M.Modal.getInstance(picModal.current).close()
             savePic(data)
+            inpT.current.value = ''
+            setImage('')
         })
         .catch(err => console.log(err))
     }
@@ -78,7 +81,7 @@ const Profile = () => {
                                     />
                                 </div>
                                 <div className="file-path-wrapper">
-                                    <input className="file-path validate" type="text"/>
+                                    <input ref={inpT} className="file-path validate" type="text"/>
                                 </div>
                             </div>
                             <button onClick={() => uploadPic()} 
