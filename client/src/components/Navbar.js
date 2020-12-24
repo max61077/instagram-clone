@@ -37,7 +37,7 @@ const Navbar = () => {
             return [
                 <li key={6}>
                     <i data-target="modal1" 
-                    className="large material-icons modal-trigger" 
+                    className="small material-icons modal-trigger nav-search" 
                     style={{color:"black", cursor:"pointer"}}
                     onClick={() => {
                         M.Modal.getInstance(searchModal.current).open()
@@ -45,15 +45,15 @@ const Navbar = () => {
                     }}
                     >search</i>
                 </li>,
-                <li key={1}><Link to="/profile">Profile</Link></li>,
-                <li key={2}><Link to="/create">CreatePost</Link></li>,
+                <li key={1}><Link className="nav-li" to="/profile">Profile</Link></li>,
+                <li key={2}><Link className="nav-li" to="/create">CreatePost</Link></li>,
                 <li key={5}>
-                    <button onClick={() => {
+                    <button className="nav-btn" onClick={() => {
                         localStorage.clear()
                         dispatch({type: 'CLEAR'})
                         history.push('/signin')
                     }} 
-                    className='btn waves-effect waves-light #e53935 red darken-1'
+                    className='btn waves-effect waves-light nav-btn #e53935 red darken-1'
                     >Logout</button>
                 </li>
             ]
